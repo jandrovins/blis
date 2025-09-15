@@ -2989,6 +2989,8 @@ main()
 		cflags_preset=''
 		echo "${script_name}: no preset CFLAGS detected."
 	fi
+	# Prepend "-fompss-2=libnodes" to cflags_preset
+	cflags_preset="-fompss-2=libnodes ${cflags_preset}"
 
 	# Check if LDFLAGS is non-empty.
 	if [ -n "${LDFLAGS}" ]; then
@@ -2999,6 +3001,8 @@ main()
 		ldflags_preset=''
 		echo "${script_name}: no preset LDFLAGS detected."
 	fi
+	# Prepend "-fompss-2=libnodes" to ldflags_preset
+	ldflags_preset="-fompss-2=libnodes ${ldflags_preset}"
 
 	# Check if the debug flag was specified.
 	if [ -n "${debug_flag}" ]; then
